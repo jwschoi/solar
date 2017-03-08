@@ -9,8 +9,7 @@ from tariff import comm_tariff
 import math
 from openpyxl import load_workbook
 
-#YEAR = date.today().year
-YEAR = 2016
+YEAR = date.today().year
 CUST_USE = "intake_example.csv"
 OUTPUT = "Template.xlsx"
 SHEET_TO_PRINT_TO = "Values"
@@ -31,16 +30,6 @@ def tariff_info():
 		print(tariff_list[i])
 	name = input("Tariff name:\n")
 	return comm_tariff(name)
-
-def get_inputs():
-	addr = input("Address:\n")
-	system_capacity = input("System capacity:\n")
-	azimuth = input("Azimuth:\n")
-	tilt = input("Tilt:\n")
-	array_type = input("Array type:\n")
-	module_type = input("Module type:\n")
-	losses = input("Losses:\n")
-	return addr, system_capacity, azimuth, tilt, array_type, module_type, losses
 
 def get_api_info(address, system_capacity, azimuth, tilt, array_type, module_type, losses):
 	base_url = "https://developer.nrel.gov/api/pvwatts/v5.json?api_key=t8dXZSeNlDxNDFAtUr6EPG32u3Vs5qjCppqtNyXr&timeframe=hourly"
@@ -252,14 +241,13 @@ def sanitize_values(system_capacity, calc, finish, tariff):
 	return ordered_info
 
 def main():
-	inputs = get_inputs()
-	addr = inputs[0]
-	system_capacity = inputs[1]
-	azimuth = inputs[2]
-	tilt = inputs[3]
-	array_type = inputs[4]
-	module_type = inputs[5]
-	losses = inputs[6]
+	addr = input("Address:\n")
+	system_capacity = input("System capacity:\n")
+	azimuth = input("Azimuth:\n")
+	tilt = input("Tilt:\n")
+	array_type = input("Array type:\n")
+	module_type = input("Module type:\n")
+	losses = input("Losses:\n")
 	url_string = get_api_info(addr, system_capacity, azimuth, tilt, array_type, module_type, losses)
 	ac_hourly = get_hourly_ac(url_string)
 	tariff = tariff_info()
