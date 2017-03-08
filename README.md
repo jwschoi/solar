@@ -1,6 +1,6 @@
 # Solar Energy Savings Calculator
 
-Solar Energy Savings Calculator is a Python program that calculates the savings for a commercial location with the installation of solar panels. Hourly kWh values from PV Watts API, and utility rates can be updated in tariffs_csv.csv.
+Solar Energy Savings Calculator is a Python program that calculates the savings for a commercial location with the installation of solar panels. Hourly kWh values from PV Watts API, and utility rates can be updated in "tariffs_csv.csv". Pre-solar intake from "Intake.csv" and outputs to "Template.xlsx".
 
 
 TOU Hour CSV Guide:

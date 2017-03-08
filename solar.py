@@ -10,7 +10,7 @@ import math
 from openpyxl import load_workbook
 
 YEAR = date.today().year
-CUST_USE = "intake_example.csv"
+CUST_USE = "Intake.csv"
 OUTPUT = "Template.xlsx"
 SHEET_TO_PRINT_TO = "Values"
 
